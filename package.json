@@ -1,0 +1,22 @@
+{
+  "name": "callvance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CallVance — AI appointment-confirmation calls powered by NVIDIA Nemotron on Nebius Token Factory and Supabase",
+  "license": "MIT",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace server & npm run dev --workspace web",
+    "build": "npm run build --workspace web && npm run build --workspace server",
+    "start": "npm run start --workspace server",
+    "typecheck": "npm run typecheck --workspace server && npm run typecheck --workspace web",
+    "test": "npm run test --workspace server",
+    "job:reminders": "npm run job:reminders --workspace server"
+  },
+  "engines": {
+    "node": ">=22.9"
+  }
+}
