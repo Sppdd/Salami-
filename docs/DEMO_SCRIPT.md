@@ -1,6 +1,6 @@
 # 3-minute demo video script
 
-**0:00–0:20 · Problem.** "No-shows cost appointment businesses hours of revenue, and reminder calls eat front-desk time. CallVance is an AI phone agent that confirms, reschedules and audits appointments. It runs on NVIDIA Nemotron through Nebius Token Factory."
+**0:00–0:20 · Problem.** "No-shows cost appointment businesses hours of revenue, and reminder calls eat front-desk time. SalamAI is an AI phone agent that confirms, reschedules and audits appointments. It runs on NVIDIA Nemotron through Nebius Token Factory."
 
 **0:20–0:45 · Setup.** Sign up. Point out that the business is created automatically. Show **Agent & business**: pick "Clinic", and the persona and policies fill in. Back on the dashboard, click **Load demo day**. Point at the sidebar's Nemotron panel, which lists the Nano, Super and Ultra model IDs served by Token Factory.
 

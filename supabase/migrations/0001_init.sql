@@ -1,4 +1,4 @@
--- CallVance schema: businesses, appointments, calls, call turns.
+-- SalamAI schema: businesses, appointments, calls, call turns.
 -- Every row carries owner_id; RLS scopes each user to their own data.
 -- The API server writes calls/turns with the service-role key (bypasses RLS).
 

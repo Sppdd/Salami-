@@ -26,7 +26,7 @@ export function Layout() {
           <PhoneCall className="h-5 w-5" />
         </div>
         <div>
-          <div className="font-semibold text-white">CallVance</div>
+          <div className="font-semibold text-white">SalamAI</div>
           <div className="text-xs text-slate-400">{business?.name ?? '…'}</div>
         </div>
       </div>
@@ -95,7 +95,7 @@ export function Layout() {
         <button onClick={() => setOpen(!open)} className="btn-ghost px-2" aria-label="Menu">
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-        <span className="font-semibold">CallVance</span>
+        <span className="font-semibold">SalamAI</span>
         <span className="w-9" />
       </header>
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

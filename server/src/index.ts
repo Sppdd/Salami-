@@ -4,7 +4,7 @@ import { models } from './agent/nebius.js';
 
 const app = await buildApp();
 await app.listen({ port: env.PORT, host: '0.0.0.0' });
-app.log.info({ models, twilio: twilioEnabled, publicUrl }, 'CallVance API ready (Nemotron on Nebius Token Factory)');
+app.log.info({ models, twilio: twilioEnabled, publicUrl }, 'SalamAI API ready (Nemotron on Nebius Token Factory)');
 
 for (const signal of ['SIGINT', 'SIGTERM'] as const) {
   process.on(signal, () => {

@@ -4,7 +4,7 @@ import { stripThinking } from './text.js';
 /**
  * Minimal client for Nebius Token Factory's OpenAI-compatible Chat Completions API.
  *
- * CallVance routes every request to one of three NVIDIA Nemotron tiers:
+ * SalamAI routes every request to one of three NVIDIA Nemotron tiers:
  *  - fast      (Nano)  : live conversation turns, where latency is the product
  *  - smart     (Super) : turns the fast tier escalates (reschedule negotiation, upset clients)
  *  - reasoning (Ultra) : post-call analysis and cross-call business insights

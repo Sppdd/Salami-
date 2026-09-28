@@ -1,8 +1,8 @@
 {
-  "name": "callvance",
+  "name": "salamai",
   "version": "1.0.0",
   "private": true,
-  "description": "CallVance — AI appointment-confirmation calls powered by NVIDIA Nemotron on Nebius Token Factory and Supabase",
+  "description": "SalamAI — AI appointment-confirmation calls powered by NVIDIA Nemotron on Nebius Token Factory and Supabase",
   "license": "MIT",
   "workspaces": [
     "server",

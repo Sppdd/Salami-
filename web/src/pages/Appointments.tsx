@@ -86,7 +86,7 @@ export function Appointments() {
 
   function exportCsv() {
     downloadCsv(
-      `callvance-appointments-${format(new Date(), 'yyyy-MM-dd')}.csv`,
+      `salamai-appointments-${format(new Date(), 'yyyy-MM-dd')}.csv`,
       rows.map((a) => ({
         client_name: a.client_name,
         client_phone: a.client_phone,
