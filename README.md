@@ -1,6 +1,6 @@
 # 811
 
-**An AI phone agent that confirms, reschedules and audits appointments, powered by NVIDIA Nemotron on Nebius Token Factory.**
+**An AI secretary that phones patients and clients to confirm, reschedule and audit appointments, powered by NVIDIA Nemotron on Nebius Token Factory.** Built for any appointment-based business, with medical and dental practices as the first focus.
 
 License: MIT · Track: **Best Apps and Agents** · Stack: Nemotron 3 (Nano / Super / Ultra) on Nebius Token Factory · Supabase (Postgres, Auth, Realtime) · Fastify · React · Twilio Voice (optional)
 
@@ -8,7 +8,7 @@ License: MIT · Track: **Best Apps and Agents** · Stack: Nemotron 3 (Nano / Sup
 
 ## The problem
 
-Clinics, salons, auto shops and law offices lose revenue to no-shows. The usual fix is front-desk staff spending hours a day on reminder calls. Most of those calls are routine ("yes, I'll be there"). The hard ones need judgment: moving an appointment to a time that is actually free, handling an upset client, or knowing when to hand off to a human.
+Doctors’ offices and every other appointment-based business (dental, therapy, salons, legal) lose revenue to no-shows. The usual fix is front-desk staff spending hours a day on reminder calls. Most of those calls are routine ("yes, I'll be there"). The hard ones need judgment: moving an appointment to a time that is actually free, handling an upset client, or knowing when to hand off to a human.
 
 ## What 811 does
 
@@ -105,6 +105,8 @@ npm run build
 ```
 
 ## Deploy on Nebius
+
+Full step-by-step guide: [docs/DEPLOY.md](docs/DEPLOY.md).
 
 The `Dockerfile` builds one container that serves the API, the Twilio webhooks and the dashboard on a single origin.
 

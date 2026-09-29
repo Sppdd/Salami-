@@ -33,8 +33,8 @@ export function Login() {
         </div>
         <div>
           <h1 className="text-4xl font-semibold leading-tight">
-            No-shows cost appointment businesses hours every week.
-            <span className="text-brand-600"> 811 calls every client for you.</span>
+            Missed appointments cost practices hours every week.
+            <span className="text-sky-300"> 811 is the front desk that calls every patient for you.</span>
           </h1>
           <p className="mt-4 max-w-lg text-slate-400">
             An AI phone agent that confirms, reschedules against your real calendar, and flags at-risk clients. It's built on NVIDIA
@@ -42,7 +42,7 @@ export function Login() {
           </p>
         </div>
         <div className="flex items-center gap-2 text-sm text-slate-400">
-          <Cpu className="h-4 w-4 text-brand-600" /> Nemotron Nano for live turns · Super for escalations · Ultra for analysis
+          <Cpu className="h-4 w-4 text-sky-300" /> Nemotron Nano for live turns · Super for escalations · Ultra for analysis
         </div>
       </div>
 
