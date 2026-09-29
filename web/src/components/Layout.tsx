@@ -1,6 +1,7 @@
 import { BarChart3, CalendarClock, Cpu, LayoutDashboard, LogOut, Menu, PhoneCall, Settings, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { Eight } from './Eight';
 import { useBusiness } from '../lib/business';
 import { modelName } from '../lib/format';
 import { useHealth } from '../lib/hooks';
@@ -22,8 +23,8 @@ export function Layout() {
   const sidebar = (
     <div className="flex h-full flex-col bg-slate-950 text-slate-300">
       <div className="flex items-center gap-2 px-5 py-5">
-        <div className="grid h-9 w-9 place-items-center rounded-lg bg-brand-600 text-white">
-          <PhoneCall className="h-5 w-5" />
+        <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand-50">
+          <Eight crop="head" size={34} />
         </div>
         <div>
           <div className="font-semibold text-white">811</div>

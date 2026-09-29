@@ -1,4 +1,5 @@
-import { Cpu, PhoneCall } from 'lucide-react';
+import { Cpu } from 'lucide-react';
+import { Eight } from '../components/Eight';
 import { useState, type FormEvent } from 'react';
 import { supabase, supabaseConfigured } from '../lib/supabase';
 
@@ -26,12 +27,13 @@ export function Login() {
     <div className="grid min-h-screen lg:grid-cols-2">
       <div className="hidden flex-col justify-between bg-slate-950 p-12 text-white lg:flex">
         <div className="flex items-center gap-2 text-lg font-semibold">
-          <div className="grid h-9 w-9 place-items-center rounded-lg bg-brand-600">
-            <PhoneCall className="h-5 w-5" />
+          <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand-50">
+            <Eight crop="head" size={34} />
           </div>
           811
         </div>
         <div>
+          <Eight mood="greet" size={180} className="mb-8" />
           <h1 className="text-4xl font-semibold leading-tight">
             Missed appointments cost practices hours every week.
             <span className="text-sky-300"> 811 is the front desk that calls every patient for you.</span>

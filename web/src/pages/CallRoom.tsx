@@ -1,6 +1,7 @@
-import { ArrowLeft, Bot, Loader2, Mic, MicOff, PhoneOff, Send, User, Volume2, VolumeX } from 'lucide-react';
+import { ArrowLeft, Mic, MicOff, PhoneOff, Send, User, Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Eight, type EightMood } from '../components/Eight';
 import { StatusBadge } from '../components/StatusBadge';
 import { api } from '../lib/api';
 import { duration, label, modelName, when } from '../lib/format';
@@ -144,6 +145,14 @@ export function CallRoom() {
 
   if (!call) return <div className="py-20 text-center text-slate-400">Loading call…</div>;
 
+  const kept = call.outcome === 'confirmed' || call.outcome === 'rescheduled';
+  const mood: EightMood =
+    call.status === 'transferred' ? 'handoff'
+    : thinking || call.status === 'analyzing' ? 'think'
+    : listening ? 'listen'
+    : kept ? 'confirmed'
+    : 'greet';
+
   return (
     <>
       <Link to="/calls" className="mb-4 inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-900">
@@ -152,11 +161,14 @@ export function CallRoom() {
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
         <section className="card flex min-h-[70vh] flex-col xl:col-span-2">
           <header className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 px-5 py-4">
-            <div>
+            <div className="flex items-center gap-3">
+              <Eight mood={mood} size={52} />
+              <div>
               <h1 className="text-lg font-semibold">{appt?.client_name ?? 'Call'}</h1>
               <p className="text-xs text-slate-500">
                 {call.channel === 'web' ? 'Browser simulator' : 'Phone call via Twilio'} · {duration(call.duration_seconds)}
               </p>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <StatusBadge value={call.status} />
@@ -177,8 +189,8 @@ export function CallRoom() {
                 </div>
               ) : (
                 <div key={t.id} className={`flex gap-3 ${t.role === 'client' ? 'flex-row-reverse' : ''}`}>
-                  <div className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${t.role === 'agent' ? 'bg-brand-600 text-white' : 'bg-slate-200 text-slate-600'}`}>
-                    {t.role === 'agent' ? <Bot className="h-4 w-4" /> : <User className="h-4 w-4" />}
+                  <div className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${t.role === 'agent' ? 'bg-brand-50' : 'bg-slate-200 text-slate-600'}`}>
+                    {t.role === 'agent' ? <Eight crop="head" size={28} /> : <User className="h-4 w-4" />}
                   </div>
                   <div className={`max-w-[80%] ${t.role === 'client' ? 'text-right' : ''}`}>
                     <div className={`inline-block rounded-2xl px-4 py-2.5 text-sm ${t.role === 'agent' ? 'bg-slate-100 text-slate-900' : 'bg-slate-900 text-white'}`}>
@@ -197,7 +209,7 @@ export function CallRoom() {
             )}
             {(thinking || call.status === 'analyzing') && (
               <div className="flex items-center gap-2 text-sm text-slate-400">
-                <Loader2 className="h-4 w-4 animate-spin" />
+                <Eight mood="think" size={40} />
                 {call.status === 'analyzing' ? 'Nemotron reasoning tier is auditing the call…' : 'Agent is thinking…'}
               </div>
             )}
