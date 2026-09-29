@@ -1,4 +1,4 @@
--- SalamAI schema: businesses, appointments, calls, call turns.
+-- 811 schema: businesses, appointments, calls, call turns.
 -- Every row carries owner_id; RLS scopes each user to their own data.
 -- The API server writes calls/turns with the service-role key (bypasses RLS).
 
@@ -13,7 +13,7 @@ create table if not exists public.businesses (
   name text not null default 'My Business',
   business_type text not null default 'clinic',
   timezone text not null default 'America/New_York',
-  agent_name text not null default 'Ava',
+  agent_name text not null default 'Eight',
   agent_persona text not null default 'Warm, concise and professional. Never pushy.',
   policies text not null default 'Appointments can be rescheduled up to 24 hours in advance at no charge. Late cancellations may incur a fee.',
   opening_hour int not null default 9 check (opening_hour between 0 and 23),

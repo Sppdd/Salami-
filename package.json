@@ -1,8 +1,8 @@
 {
-  "name": "salamai",
+  "name": "811",
   "version": "1.0.0",
   "private": true,
-  "description": "SalamAI — AI appointment-confirmation calls powered by NVIDIA Nemotron on Nebius Token Factory and Supabase",
+  "description": "811 — AI appointment-confirmation calls powered by NVIDIA Nemotron on Nebius Token Factory and Supabase",
   "license": "MIT",
   "workspaces": [
     "server",

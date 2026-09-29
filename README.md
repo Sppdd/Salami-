@@ -1,4 +1,4 @@
-# SalamAI
+# 811
 
 **An AI phone agent that confirms, reschedules and audits appointments, powered by NVIDIA Nemotron on Nebius Token Factory.**
 
@@ -10,7 +10,7 @@ License: MIT · Track: **Best Apps and Agents** · Stack: Nemotron 3 (Nano / Sup
 
 Clinics, salons, auto shops and law offices lose revenue to no-shows. The usual fix is front-desk staff spending hours a day on reminder calls. Most of those calls are routine ("yes, I'll be there"). The hard ones need judgment: moving an appointment to a time that is actually free, handling an upset client, or knowing when to hand off to a human.
 
-## What SalamAI does
+## What 811 does
 
 1. **Import your schedule.** Upload a CSV or add appointments by hand. Common column names from booking exports are recognized.
 2. **The agent calls every unconfirmed client.** It uses a real phone call through Twilio, or the **in-browser call simulator**, which needs no phone setup and is ideal for judging.
@@ -21,7 +21,7 @@ Clinics, salons, auto shops and law offices lose revenue to no-shows. The usual 
 
 ## How NVIDIA Nemotron and Nebius Token Factory are used
 
-SalamAI routes each job to the Nemotron tier that fits its latency and reasoning needs. All three tiers are served by **Nebius Token Factory** through its OpenAI-compatible API (`server/src/agent/nebius.ts`).
+811 routes each job to the Nemotron tier that fits its latency and reasoning needs. All three tiers are served by **Nebius Token Factory** through its OpenAI-compatible API (`server/src/agent/nebius.ts`).
 
 | Tier | Default model (configurable) | Used for | Why this tier |
 |---|---|---|---|
@@ -109,7 +109,7 @@ npm run build
 The `Dockerfile` builds one container that serves the API, the Twilio webhooks and the dashboard on a single origin.
 
 ```bash
-docker build -t salamai \
+docker build -t 811 \
   --build-arg VITE_SUPABASE_URL=... --build-arg VITE_SUPABASE_ANON_KEY=... .
 ```
 
@@ -121,16 +121,6 @@ docker build -t salamai \
 - The browser gets only the Supabase anon key. Row level security limits every read to the signed-in owner, and calls, turns and reports are read-only for users.
 - The API verifies the Supabase JWT on every `/api/*` request and checks call ownership. The service-role key never leaves the server.
 - Twilio webhooks are rejected unless `X-Twilio-Signature` validates. The API is rate-limited, and request bodies are validated with zod.
-
-## What changed during the submission period
-
-SalamAI (formerly CallVance) started as a prototype that used ElevenLabs Conversational AI for voice and hard-coded call logic. For this hackathon it was **rebuilt around Nebius Token Factory and NVIDIA Nemotron**:
-
-- The ElevenLabs agent was replaced by our own agent loop on Nemotron. Nano handles live turns, Super handles escalations, and Ultra handles audits and insights.
-- New: calendar-grounded rescheduling, the independent post-call audit, and the no-show risk score.
-- New: the cross-call Insights report, the browser call simulator, per-business agent personalities, and live front-desk transfer.
-- The backend moved to Supabase Auth, RLS and Realtime.
-- New: the batch reminders job for Nebius Serverless Jobs.
 
 ## Feedback on Nebius Token Factory and NVIDIA Nemotron
 

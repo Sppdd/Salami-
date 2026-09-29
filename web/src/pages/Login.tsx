@@ -29,12 +29,12 @@ export function Login() {
           <div className="grid h-9 w-9 place-items-center rounded-lg bg-brand-600">
             <PhoneCall className="h-5 w-5" />
           </div>
-          SalamAI
+          811
         </div>
         <div>
           <h1 className="text-4xl font-semibold leading-tight">
             No-shows cost appointment businesses hours every week.
-            <span className="text-brand-600"> SalamAI calls every client for you.</span>
+            <span className="text-brand-600"> 811 calls every client for you.</span>
           </h1>
           <p className="mt-4 max-w-lg text-slate-400">
             An AI phone agent that confirms, reschedules against your real calendar, and flags at-risk clients. It's built on NVIDIA
