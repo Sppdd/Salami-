@@ -115,7 +115,7 @@ create table if not exists public.insight_reports (
 -- updated_at triggers
 -- ---------------------------------------------------------------------------
 create or replace function public.touch_updated_at() returns trigger
-language plpgsql as $$
+language plpgsql set search_path = '' as $$
 begin
   new.updated_at = now();
   return new;
